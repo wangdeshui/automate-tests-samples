@@ -6,13 +6,13 @@ This sample write for our tester <font color="red"> **Hana**</font>, <font color
 ## Ruby Selenium WebDriver tips
 1. 保持cookie
 
-	```
+	```ruby
 	Selenium::WebDriver.for(:firefox, :profile => 'default') #selenium 2 
 	```
 	
 2. 执行一段JS脚本
 	
-	```
+	```ruby
 	require 'rubygems'  
 	require 'selenium-webdriver'  
 	dr = Selenium::WebDriver.for :ie  
@@ -30,7 +30,7 @@ This sample write for our tester <font color="red"> **Hana**</font>, <font color
 	
 3. 定位单个对象
 	
-	```
+	```ruby
 	:class             => 'class name',  
 	:class_name        => 'class name',  
 	:css               => 'css selector',  
@@ -45,7 +45,7 @@ This sample write for our tester <font color="red"> **Hana**</font>, <font color
 	```
 4. 等待完成
 	
-	```
+	```ruby
 	wait = Selenium::WebDriver::Wait.new({:timeout => 30})  
 	box = wait.until {dr.find_element(:css => '.red_box')}  
 	dr.execute_script('arguments[0].style.border = "5px solid yellow"', box) #div will be h
@@ -53,7 +53,7 @@ This sample write for our tester <font color="red"> **Hana**</font>, <font color
 	
 5. 下来列表框
 	
-	``````
+	``````ruby
 		require 'rubygems'  
 		require 'selenium-webdriver'  
 		module EasyWrap  
@@ -126,14 +126,14 @@ This sample write for our tester <font color="red"> **Hana**</font>, <font color
 	
 6. 截图
 	
-	```
+	```ruby
 	dr.save_screenshot '.\Hana.png' 
 	```
 	
 7. 注入jQuery进行辅助测试， 如果页面没有引用jQuery
 
 	
-	```
+	```ruby
 		jquery_helper.rb  
   
 		\#encoding: utf-8  
@@ -176,14 +176,14 @@ This sample write for our tester <font color="red"> **Hana**</font>, <font color
 	
 8. 加载文件
 	
-	```
+	```ruby
 	require_relative '../page_objects/homepage'
 	
 	```
 	
 9. 使用Test::Unit 的Assert在Cucumber里
 	
-	```
+	```ruby
 	require 'test/unit'
 	require 'test/unit/assertions'
 	
