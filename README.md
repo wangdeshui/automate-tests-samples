@@ -208,5 +208,27 @@ This sample write for our tester <font color="red"> **Hana**</font>, <font color
 	
 	*  参考这个<http://ruby-metaprogramming.rubylearning.com/html/ruby_metaprogramming_3.html>
 	
-	
+11.  include and extend different, include add methods to instance, extend add methods to class
+	```ruby
+		module Foo
+  		 def foo
+		    puts 'heyyyyoooo!'
+		 end
+		end
+		
+		class Bar
+		  include Foo
+		end
+		
+		Bar.new.foo # heyyyyoooo!
+		Bar.foo # NoMethodError: undefined method ‘foo’ for Bar:Class
+		
+		class Baz
+		  extend Foo
+		end
+		
+		Baz.foo # heyyyyoooo!
+		Baz.new.foo # NoMethodError: undefined method ‘foo’ for #<Baz:0x1e708>
+	```
+
 Will Add more tips when have new ...
