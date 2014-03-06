@@ -1,5 +1,7 @@
 require 'test/unit'
 require 'test/unit/assertions'
+require 'rubygems'
+require 'selenium-webdriver'
 
 World(Test::Unit::Assertions)
 
@@ -34,3 +36,14 @@ module CommonHelper
   end
 
 end
+
+
+module Selenium::WebDriver
+  Element.module_eval do
+    def send_text(value)
+      self.clear
+      self.send_keys value+"aa"
+    end
+  end
+end
+

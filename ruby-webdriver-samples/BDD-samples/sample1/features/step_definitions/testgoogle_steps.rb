@@ -7,6 +7,12 @@ require_relative '../helpers/CommonHelper'
 
 include CommonHelper
 
+
+
+
+
+
+
 Given(/^I am in google home page$/) do
   @driver=driver
   @homepage=HomePage.new(@driver)
@@ -19,7 +25,7 @@ end
 
 Given(/^I have input "(.*?)"$/) do |arg1|
 
-  @homepage.search_field.send_keys "Hana!"
+  @homepage.search_field.send_text "Hana!"
 
   puts "Page title is #{@homepage.title}"
 

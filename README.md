@@ -191,6 +191,22 @@ This sample write for our tester <font color="red"> **Hana**</font>, <font color
 				
 	
 	```
+10. 我们可以很方便的扩展一些功能，比如
+
+	```ruby
+	module Selenium::WebDriver
+	  Element.module_eval do
+	    def send_text(value)
+	      self.clear
+	      self.send_keys value+"aa"
+	    end
+	  end
+	end
+	
+	```
+
+	
+	*  参考这个<http://ruby-metaprogramming.rubylearning.com/html/ruby_metaprogramming_3.html>
 	
 	
 Will Add more tips when have new ...
