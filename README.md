@@ -1,7 +1,7 @@
 automate-tests-samples
 ======================
 ## Overview
-This sample write for our tester <font color="red"> **Hana**</font>, <font color='orange'>Coffee, Coffee, You own me!</font>
+Tips for selenium-webdriver ruby
 
 ## Ruby Selenium WebDriver tips
 1. 保持cookie
