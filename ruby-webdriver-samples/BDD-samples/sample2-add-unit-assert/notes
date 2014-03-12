@@ -1,0 +1,13 @@
+1. all *.rb files that are siblings or below the features will be loaded auto-automatically
+2. cucumber --tag @jack
+	cucumber --tags @billing,@important  this is OR
+	cucumber --tags @billing --tags @important  this is AND
+	cucumber --tags @billing,@wip --tags @important this is OR AND
+	cucumber --tags ~@todo --tags ~@wip  this is ignore tags
+3. cucumber --dry-run to generate steps without running
+4. cucumber --guess  Guess best match for Ambiguous steps
+5. cucumber -v  check what files load automatically
+6. cucumber features/authenticate_user.feature:44 --format html > features.html
+    run line 44 of feature
+
+7. cucumber features --name "home page tag"  …will run the scenario(s) named “Failed login”
