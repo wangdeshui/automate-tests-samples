@@ -1,24 +1,34 @@
-Before do |scenario|
+# Before do |scenario|
+#   # The +scenario+ argument is optional, but if you use it, you can get the title,
+#   # description, or name (title + description) of the scenario that is about to be
+#   # executed.
+#   puts "Jack:"+scenario.name
+
+# end
+
+
+After('@jack') do
   # The +scenario+ argument is optional, but if you use it, you can get the title,
   # description, or name (title + description) of the scenario that is about to be
   # executed.
-  puts "Jack:"+scenario.title
+  puts "Jack:hello"
 
 end
+ 
 
-After do |scenario|
-  # Do something after each scenario.
-  # The +scenario+ argument is optional, but
-  # if you use it, you can inspect status with
-  # the #failed?, #passed? and #exception methods.
+# After do |scenario|
+#   # Do something after each scenario.
+#   # The +scenario+ argument is optional, but
+#   # if you use it, you can inspect status with
+#   # the #failed?, #passed? and #exception methods.
+#   puts "Haha:"+scenario.passed?
+#   if(scenario.failed?)
+#     subject = "Jack -test-failed info #{scenario.exception.message}"
+#     puts subject
+#   end
 
-  if(scenario.failed?)
-    subject = "Jack -test-failed info #{scenario.exception.message}"
-    puts subject
-  end
-
-  Cucumber.wants_to_quit = true if scenario.failed?
-end
+#   Cucumber.wants_to_quit = true if scenario.failed?
+# end
 
 
 AfterStep do |scenario|
