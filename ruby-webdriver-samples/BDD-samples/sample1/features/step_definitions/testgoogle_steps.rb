@@ -25,7 +25,9 @@ end
 
 Given(/^I have input "(.*?)"$/) do |arg1|
 
-  @homepage.search_field.send_text "Hana!"
+ #@homepage.search_field.send_text "Hana!"
+
+ @driver.find_element_attribute_prefix("input","value","Google").send_keys "JackWang"
 
   puts "Page title is #{@homepage.title}"
 

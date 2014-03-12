@@ -47,3 +47,13 @@ module Selenium::WebDriver
   end
 end
 
+class Selenium::WebDriver::Driver
+
+    def find_element_attribute_prefix(tag,attribute, prefix)
+        self.execute_script('$(tag+"["+attribute+"|='"+prefix+"']")')
+    end
+
+
+end
+
+

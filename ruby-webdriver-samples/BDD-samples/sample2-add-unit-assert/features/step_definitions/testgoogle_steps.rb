@@ -1,9 +1,9 @@
 require 'rubygems'
 require 'selenium-webdriver'
 
-require_relative '../page_objects/homepage'
-require_relative '../page_objects/resultpage'
-require_relative '../helpers/CommonHelper'
+# require_relative '../page_objects/homepage'
+# require_relative '../page_objects/resultpage'
+# require_relative '../helpers/CommonHelper'
 
 include CommonHelper
 
@@ -16,12 +16,13 @@ Given(/^I am in google home page$/) do
 
   #test if unit test assert can use
   #assert 1<2
+  # @homepage.test_fail
 
 end
 
 Given(/^I have input "(.*?)"$/) do |arg1|
 
-  @homepage.search_field.send_keys "Hana!"
+  @homepage.search_field.send_keys arg1
 
   puts "Page title is #{@homepage.title}"
 
@@ -38,7 +39,7 @@ Then(/^the page result should include "(.*?)"$/) do |arg1|
 
   #verify { assert element_present?(:css, "td.table5 > span.style1") }
   #assert !60.times{ break if (element_present?(:css, "anElement") rescue false); sleep 1 }
-  wait_till { result_page.title.downcase.start_with? "hana!" }
+  wait_till { result_page.title.downcase.start_with? arg1.downcase }
 
   puts "Page title is #{result_page.title}"
   @driver.quit

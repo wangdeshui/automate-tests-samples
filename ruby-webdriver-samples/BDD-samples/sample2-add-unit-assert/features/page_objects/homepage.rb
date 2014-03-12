@@ -14,6 +14,10 @@ class HomePage<BasePage
     assert 1<2, "1 not great 2"
   end
 
+  def test_fail
+    assert 1>2, "testing fail"
+  end
+
   def submit
     search_field.submit
   end
